@@ -1,6 +1,8 @@
 //  import bible from "/data/biblia.json";
 // import bible from "data/biblia.json";
 
+const Bible = document.getElementById("bible");
+
 const bible = await loadJSON("JSON/rv_1858.json");
 const bible = await loadJSON("JSON/rv_1909.json");
 const bible = await loadJSON("JSON/rv_1909_strongs.json");

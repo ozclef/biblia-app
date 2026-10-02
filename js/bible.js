@@ -7,7 +7,8 @@ const bible = await loadJSON("JSON/rv_1909_strongs.json");
 const bible = await loadJSON("JSON/rvg_2004.json");
 const bible = await loadJSON("JSON/sagradas.json");
 const bible = await loadJSON("JSON/rvg.json");
-if(route === "bible") html += viewBible();
+if(route === "bible") html += viewBible(rvg);
+if(route === "bible") html += viewBible(rvg);
 
 
 localStorage.setItem("version", "rvg");

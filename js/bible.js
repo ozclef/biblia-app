@@ -1,4 +1,6 @@
-import bible from "/data/biblia.json";
+//  import bible from "/data/biblia.json";
+
+import bible from "JSON/rvg.json";
 
 function Bible() {
   return (

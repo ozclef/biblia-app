@@ -1,9 +1,12 @@
 //  import bible from "/data/biblia.json";
+// import bible from "data/biblia.json";
 
-import bible from "JSON/rvg.json";
+const bible = await loadJSON("JSON/rvg.json");
+
+if(route === "bible") html += viewBible(bible);
 
 function Bible() {
-  return (
+  return  `
     <div class="card-post">
       <h1>Biblioteca bíblica</h1>
 
@@ -13,7 +16,8 @@ function Bible() {
         </div>
       ))}
     </div>
-  );
+  `;
 }
 
+   render ();
 export default Bible;

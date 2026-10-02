@@ -71,7 +71,7 @@ async function loadJSON(path){
   if(route === "post") html += await viewPost();
   if(route === "photos") html += viewPhotos();
   if(route === "videos") html += viewVideos();
-  if(route === "settings") html += viewSettings(profile);
+  if(route === "settings") html += viewSettings(bible);
 
   html += `</div>`;
   app.innerHTML = html;
@@ -132,7 +132,7 @@ async function Bible() {
         </div>
       ))}
     </div>
-  );
+  )`;
 }
 
 export default Bible;

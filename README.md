@@ -13,6 +13,12 @@
 
 https://github.com/ozclef/mis-versiculos-favoritos
 
+----
+
+
+## PERSONAL CODE VERSE <3
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/dd497345-d5b1-4d0b-b59e-1cb4ebff7bbf" />
 
 
 ----

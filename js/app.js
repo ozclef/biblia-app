@@ -1,8 +1,8 @@
-import bible from "./data/biblia.json";
+import bible from "/data/biblia.json";
 
-function App() {
+function Bible() {
   return (
-    <main>
+    <div class="card-post">
       <h1>Biblioteca bíblica</h1>
 
       {bible.books.map(book => (
@@ -10,8 +10,8 @@ function App() {
           {book.name}
         </div>
       ))}
-    </main>
+    </div>
   );
 }
 
-export default App;
+export default Bible;

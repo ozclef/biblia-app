@@ -15,6 +15,7 @@ async function render(){
 
 
 ///// ESTE REEMPLAZABA:    const profile = await loadJSON("data/profile.json");
+	 const bible = await loadJSON("JSON/rvg.json");
 	/*
 const profile = await loadJSON("data/profile.json") || {
     theme:"dark",

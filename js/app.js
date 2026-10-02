@@ -120,9 +120,9 @@ function viewProfile(p){
 */
 
 
-import bible from "/data/biblia.json";
+import bible from "JSON/rvg.json";
 async function Bible() {
-  return `(
+	return `	  
     <div class="card-post">
       <h1>Biblioteca bíblica</h1>
 
@@ -132,7 +132,7 @@ async function Bible() {
         </div>
       ))}
     </div>
-  )`;
+	`;
 }
 
 export default Bible;
@@ -154,7 +154,7 @@ async function viewPost(){
         style="border:none;"
         loading="lazy">
       </iframe>
-	  <div id="app2"></div>
+	  <!---<div id="app2"></div>--->
     </div>
   `;
 }

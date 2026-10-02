@@ -10,7 +10,6 @@
 
 ###  otros repos:
 
-https://ozclef.github.io/hacedores-falsos-de-adoradores-de-dios/
 
 https://github.com/ozclef/mis-versiculos-favoritos
 

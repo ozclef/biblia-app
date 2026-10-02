@@ -1,12 +1,13 @@
 //  import bible from "/data/biblia.json";
 // import bible from "data/biblia.json";
 
+const bible = await loadJSON("JSON/rv_1858.json");
+const bible = await loadJSON("JSON/rv_1909.json");
+const bible = await loadJSON("JSON/rv_1909_strongs.json");
+const bible = await loadJSON("JSON/rvg_2004.json");
+const bible = await loadJSON("JSON/sagradas.json");
 const bible = await loadJSON("JSON/rvg.json");
-
 if(route === "bible") html += viewBible();
-if(route === "bible2") html += viewBible2();
-if(route === "bible3") html += viewBible3();
-
 
 
 localStorage.setItem("version", "rvg");

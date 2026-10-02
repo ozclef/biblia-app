@@ -7,6 +7,11 @@ if(route === "bible") html += viewBible();
 if(route === "bible2") html += viewBible2();
 if(route === "bible3") html += viewBible3();
 
+
+
+localStorage.setItem("version", "rvg");
+localStorage.setItem("lastBook", "book");
+localStorage.setItem("lastChapter", 0);
 /////  1er   brrador 
 /*
 function Bible() {

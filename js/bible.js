@@ -4,7 +4,11 @@
 const bible = await loadJSON("JSON/rvg.json");
 
 if(route === "bible") html += viewBible();
+if(route === "bible2") html += viewBible2();
+if(route === "bible3") html += viewBible3();
 
+/////  1er   brrador 
+/*
 function Bible() {
   return  `
     <div class="card-post">
@@ -19,7 +23,7 @@ function Bible() {
   `;
 }
 /// export default Bible;
-
+*/
 
 
 function viewBible(bible) {
@@ -33,20 +37,17 @@ function viewBible(bible) {
       <p>No se pudo cargar la Biblia.</p>
     </div>`;
   }
-
   out += `<div class="bible-books">`;
-
   // Esto depende de la estructura REAL de rvg.json.
-  // Primero necesitamos verla.
-  
+  // Primero necesitamos verla.  
   return out + `
     </div>
   </div>`;
 }
-
 render ();
 
-
+///   RENDER TXT  
+const texto = await loadTXT("biblia txt/rv95-1.txt");
 async function loadTXT(path) {
   const res = await fetch(path);
 
@@ -56,3 +57,21 @@ async function loadTXT(path) {
 
   return await res.text();
 }
+
+
+  /*
+  <select id="version">
+  <option value="JSON/rvg.json">RVRG</option>
+  <option value="JSON/rv_1909.json">RV 1909</option>
+  <option value="JSON/rv_1858.json">RV 1858</option>
+</select>
+  */
+
+
+
+///    SEPARRAR POR LINEAS contenido por 100  paginas 
+      const lineas = texto.split("\n");
+const pagina = lineas.slice(0, 100);
+out += pagina.map(linea => `<p>${linea}</p>`).join("");
+
+  

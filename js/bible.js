@@ -8,15 +8,15 @@ const bible = await loadJSON("JSON/rvg_2004.json");
 const bible = await loadJSON("JSON/sagradas.json");
 const bible = await loadJSON("JSON/rvg.json");
 if(route === "bible") html += viewBible(rvg);
-if(route === "bible") html += viewBible(rvg);
+//   if(route === "bible") html += viewBible(rvg);
 
 
 localStorage.setItem("version", "rvg");
 localStorage.setItem("lastBook", "book");
 localStorage.setItem("lastChapter", 0);
 /////  1er   brrador 
-/*
-function Bible() {
+
+async function Bible(rvg) {
   return  `
     <div class="card-post">
       <h1>Biblioteca bíblica</h1>
@@ -30,7 +30,7 @@ function Bible() {
   `;
 }
 /// export default Bible;
-*/
+
 
 
 function viewBible(bible) {

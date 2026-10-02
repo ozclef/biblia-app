@@ -3,26 +3,29 @@
 
 const Bible = document.getElementById("bible");
 
-const bible = await loadJSON("JSON/rv_1858.json");
-const bible = await loadJSON("JSON/rv_1909.json");
-const bible = await loadJSON("JSON/rv_1909_strongs.json");
-const bible = await loadJSON("JSON/rvg_2004.json");
-const bible = await loadJSON("JSON/sagradas.json");
-const bible = await loadJSON("JSON/rvg.json");
+const version = await loadJSON("JSON/rv_1858.json");
+const version = await loadJSON("JSON/rv_1909.json");
+const version = await loadJSON("JSON/rv_1909_strongs.json");
+const version = await loadJSON("JSON/rvg_2004.json");
+const version = await loadJSON("JSON/sagradas.json");
+const version = await loadJSON("JSON/rvg.json");
+
+
 if(route === "bible") html += await viewBible();
 //   if(route === "bible") html += viewBible(rvg);
-
+/*
   html += `</div>`;
   bible.innerHTML = html;
 }
-
+*/
 
 localStorage.setItem("version", "rvg");
 localStorage.setItem("lastBook", "book");
 localStorage.setItem("lastChapter", 0);
 /////  1er   brrador 
 
-async function bible() {
+// async 
+  function version() {
   return  `
     <div class="card-post">
       <h1>Biblioteca bíblica</h1>

@@ -1,93 +1,63 @@
-//  import bible from "/data/biblia.json";
-// import bible from "data/biblia.json";
+const bibleContainer = document.getElementById("bible");
+const selector = document.getElementById("version");
 
-const Bible = document.getElementById("bible");
-
-const version = await loadJSON("JSON/rv_1858.json");
-const version = await loadJSON("JSON/rv_1909.json");
-const version = await loadJSON("JSON/rv_1909_strongs.json");
-const version = await loadJSON("JSON/rvg_2004.json");
-const version = await loadJSON("JSON/sagradas.json");
-const version = await loadJSON("JSON/rvg.json");
-
-
-if(route === "bible") html += await viewBible();
-//   if(route === "bible") html += viewBible(rvg);
-/*
-  html += `</div>`;
-  bible.innerHTML = html;
-}
-*/
-
-localStorage.setItem("version", "rvg");
-localStorage.setItem("lastBook", "book");
-localStorage.setItem("lastChapter", 0);
-/////  1er   brrador 
-
-// async 
-  function version() {
-  return  `
-    <div class="card-post">
-      <h1>Biblioteca bíblica</h1>
-
-      {bible.books.map(book => (
-        <div key={book.id}>
-          {book.name}
-        </div>
-      ))}
-    </div>
-  `;
-}
-/// export default Bible;
-
-
-
-function viewBible(bible) {
-  let out = `
-    <div class="card-post">
-      <h1>Biblioteca bíblica</h1>
-  `;
-
-  if (!bible) {
-    return out + `
-      <p>No se pudo cargar la Biblia.</p>
-    </div>`;
-  }
-  out += `<div class="bible-books">`;
-  // Esto depende de la estructura REAL de rvg.json.
-  // Primero necesitamos verla.  
-  return out + `
-    </div>
-  </div>`;
-}
-render ();
-
-///   RENDER TXT  
-const texto = await loadTXT("biblia txt/rv95-1.txt");
-async function loadTXT(path) {
+async function loadBible(path) {
   const res = await fetch(path);
 
   if (!res.ok) {
     throw new Error(`${path} ${res.status}`);
   }
 
-  return await res.text();
+  return await res.json();
+}
+
+async function showBible(path) {
+
+  try {
+
+    const bible = await loadBible(path);
+
+    bibleContainer.innerHTML = viewBible(bible);
+
+  } catch (error) {
+
+    console.error(error);
+
+    bibleContainer.innerHTML = `
+      <div class="card-post">
+        <h2>Error</h2>
+        <p>No se pudo cargar esta versión.</p>
+      </div>
+    `;
+  }
 }
 
 
+function viewBible(bible) {
+
+  let out = `
+    <div class="card-post">
+      <h1>Biblioteca bíblica</h1>
+      <div class="bible-books">
+  `;
+
   /*
-  <select id="version">
-  <option value="JSON/rvg.json">RVRG</option>
-  <option value="JSON/rv_1909.json">RV 1909</option>
-  <option value="JSON/rv_1858.json">RV 1858</option>
-</select>
+    AQUÍ vamos a recorrer bible
+    cuando sepamos exactamente
+    cómo está estructurado rvg.json.
   */
 
+  return out + `
+      </div>
+    </div>
+  `;
+}
 
 
-///    SEPARRAR POR LINEAS contenido por 100  paginas 
-      const lineas = texto.split("\n");
-const pagina = lineas.slice(0, 100);
-out += pagina.map(linea => `<p>${linea}</p>`).join("");
+selector.addEventListener("change", () => {
 
-  
+  const ruta = selector.value;
+
+  showBible(ruta);
+
+});
